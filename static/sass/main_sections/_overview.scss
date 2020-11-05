@@ -1,0 +1,28 @@
+@import "./../_var";
+
+.section--overview {
+    &-bg {
+        background: {
+            image: url("../images/bg/bg-overview.png");
+            repeat: no-repeat;
+            size: cover;
+            position: center center;
+        }
+    }
+    
+    &-pb {
+        padding-bottom: 120px;
+
+        @media screen and (max-width: 991px) {
+            padding-bottom: 60px;
+        }
+    }
+}
+
+.overview__text {
+    color: $color-btn;
+    font-family: "gillsans";
+    font-size: 24px;
+    line-height: 26px;
+    margin-top: 55px;
+}

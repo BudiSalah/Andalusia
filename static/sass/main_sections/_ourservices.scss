@@ -1,12 +1,16 @@
 @import "./../_var";
 
 .section--services {
-    &-pg {
+    &-bg {
         background: {
             image: url("../images/bg/bg-services.png");
             repeat: no-repeat;
             size: cover;
             position: center center;
+        }
+
+        @media screen and (max-width: 991px) {
+            background-size: contain;
         }
     }
     

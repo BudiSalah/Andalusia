@@ -51,8 +51,29 @@ p {
         border-radius: 0;
         padding: 7px 25px;
     }
+    
+    &--form {
+        min-width: 175px;
+        min-height: 50px;
+        padding: 0;
+        font-size: 14px;
+        font-family: "sintonybold";
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 0;
+
+        @media screen and (max-width: 575px) {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+    }
 }
 
 .hr {
     margin: 20px 0;
+
+    &--gray {
+        border-color: #3d3e3d;
+        margin: 15px 0 50px;
+    }
 }

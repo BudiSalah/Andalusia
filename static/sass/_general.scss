@@ -37,18 +37,61 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+
+    &--footer {
+        @media screen and (max-width: 575px) {
+            justify-content: center;
+        }
+    }
         
     &__item {
         display: flex;
         padding: 10px;
         background-color: #0a2034;
         border-radius: 50%;
+
+        svg {
+            fill: #ffffff;
+            width: 12px;
+            height: 12px;
+            display: flex;
+        }
+
+        &--footer {
+            background-color: transparent;
+            padding: 0;
+
+            svg {
+                fill: $color-text;
+                width: 18px;
+                height: 18px;
+            }
+        }
     }
 
-    svg {
-        fill: #ffffff;
-        width: 12px;
-        height: 12px;
+}
+
+.form {
+    margin-bottom: 50px;
+
+    &__group {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;
+
+        @media screen and (max-width: 575px) {
+            flex-direction: column;
+        }
+    }
+
+    &__input {
+        min-height: 50px;
+        border-radius: 0;
+
+        @media screen and (max-width: 575px) {
+            flex: 0 0 100%;
+            width: 100%;
+        }
     }
 }

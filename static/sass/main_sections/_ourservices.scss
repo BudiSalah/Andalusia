@@ -1,0 +1,52 @@
+@import "./../_var";
+
+.section--services {
+    &-pg {
+        background: {
+            image: url("../images/bg/bg-services.png");
+            repeat: no-repeat;
+            size: cover;
+            position: center center;
+        }
+    }
+    
+    &-pb {
+        padding-bottom: 190px;
+
+        @media screen and (max-width: 991px) {
+            padding-bottom: 95px;
+        }
+    }
+}
+
+.services {
+    padding-top: 115px;
+    margin-bottom: 70px;
+
+    @media screen and (max-width: 991px) {
+        padding-top: 55px;
+    }
+
+    &__item {
+        padding-bottom: 30px;
+    }
+
+    &__icon {
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-family: "helvetica";
+        font-size: 24px;
+        color: $color-menu;
+        text-transform: lowercase;
+
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+
+    &__text {
+        margin-bottom: 0;
+    }
+}

@@ -4,6 +4,12 @@ html, body {
     font-family: "corbel";
 }
 
+p {
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-text;
+}
+
 .container {
     &--relative {
         position: relative;
@@ -40,11 +46,26 @@ html, body {
         font-size: 18px;
         padding: 9px 28px;
     }
+
+    &--trans {
+        background: transparent;
+        color: #a0a0a0;
+        border: 1px solid #a0a0a0;
+        text-transform: uppercase;
+    }
 }
 
 .slider__text {
-    font-size: 18px;
-    line-height: 22px;
-    color: $color-text;
     margin-bottom: $margin-bottom;
+}
+
+.section {
+    padding: 70px 0;
+}
+
+.headline__text {
+    line-height: 1;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 36px;
 }

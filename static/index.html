@@ -4,13 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andalusia - Home</title>
+    <!-- <link rel="stylesheet" href="./css/style-rtl.css"> -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-xl">
+          <div class="container container--relative">
+              <a class="navbar-brand nav__brand" href="#">
+                <img src="./images/logo.png" class="d-inline-block align-top" alt="" loading="lazy">
+              </a>
+              
+              <ul id="navbarTogglerDemo01" class="nav collapse navbar-collapse">
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item nav__item dropdown">
+                      <a class="nav-link nav__link dropdown-toggle dropdown-toggle--noicon" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About us</a>
+                      <div class="dropdown-menu nav__dropdown-menu">
+                        <a class="dropdown-item nav__dropdown-item" href="#">Our Company</a>
+                        <a class="dropdown-item nav__dropdown-item" href="#">Partners & Accreditations</a>
+                        <a class="dropdown-item nav__dropdown-item" href="#">Corporate Structure</a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">Business Units</a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">Projects</a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">Partners</a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">Media&Events</a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">Contacts</a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">Careers</a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">
+                        <img src="./images/icon/icon-search.png" alt="Search Icon">
+                    </a>
+                  </li>
+                  <li class="nav-item nav__item">
+                    <a class="nav-link nav__link" href="#">
+                      <img src="./images/icon/icon-lang-eng.png" alt="Language Icon">
+                    </a>
+                  </li>
+              </ul>
+
+              <button class="navbar-toggler navbar__mobile-btn" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+        </nav>
+
+        <section class="slider">
+          <div id="splide">
+            <div class="slider__controller splide__arrows">
+              <img src="images/icon/icon-up-arrow.png" alt="Slider Icon" class="slider__btn slider__prev-btn splide__arrow splide__arrow--prev">
+              <div class="slider__index-list"></div>
+              <img src="images/icon/icon-down-arrow.png" alt="Slider Icon" class="slider__btn slider__next-btn splide__arrow splide__arrow--next">
+            </div>
+
+            <div class="splide__track">
+              <div class="slider__list splide__list">
+                <div class="slider__item splide__slide" style="background-image: url('./images/bg/bg-slide1.png');">
+                  <div class="container">
+                    <div class="row slider__row">
+                      <div class="col-12 col-md-6">
+                        <h1 class="slider__title">We are growing fast <br>do you see.</h1>
+                        <p class="slider__text">Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length.</p>
+                        <a href="http://" class="btn">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="slider__item splide__slide" style="background-image: url('./images/bg/bg-slide1.png');">
+                  <div class="container">
+                    <div class="row slider__row">
+                      <div class="col-12 col-md-6">
+                        <h1 class="slider__title">We are growing fast <br>do you see.</h1>
+                        <p class="slider__text">Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length.</p>
+                        <a href="http://" class="btn">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="slider__item splide__slide" style="background-image: url('./images/bg/bg-slide1.png');">
+                  <div class="container">
+                    <div class="row slider__row">
+                      <div class="col-12 col-md-6">
+                        <h1 class="slider__title">We are growing fast <br>do you see.</h1>
+                        <p class="slider__text">Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length.</p>
+                        <a href="http://" class="btn">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="ourservices"></section>
+        <section class="overview"></section>
+        <section class="officers"></section>
+        <section class="statistics"></section>
+        <section class="news"></section>
+        <section class="partners"></section>
+    </main>
+
+    <footer>
+        
+    </footer>
 
       <script src="./js/jquery.min.js"></script>
       <script src="./js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

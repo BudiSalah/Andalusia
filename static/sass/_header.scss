@@ -1,0 +1,266 @@
+@import "_var";
+
+$slider-height-min-992: 550px;
+$slider-height-max-991: 400px;
+
+@mixin slider-height($prop, $height) {
+    #{$prop}: $height;
+}
+
+.navbar,
+.nav__brand,
+.nav__link {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar {
+    box-shadow: 1px 1px 4px $color-border;
+
+    @media screen and (max-width: 1199px) {
+        padding: 20px 0;
+    }
+
+    &__mobile-btn {
+        position: absolute;
+        right: 0;
+        top: 4px;
+
+        @media screen and (max-width: 575px) {
+            right: 15px;
+        }
+    }
+}
+
+.nav {
+    @media screen and (min-width: 1199px) {
+        height: 75px;
+        justify-content: flex-end;
+    }
+
+    @media screen and (max-width: 1199px) {
+        flex-direction: column;
+        align-items: flex-start;
+        transition: none;
+    }
+
+    &__brand {
+        max-width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__item {
+        line-height: 75px;
+        border-width: 0 1px;
+        border-style: solid;
+        border-color: transparent;
+
+        @media screen and (max-width: 1199px) {
+            line-height: 1.4;
+            margin: 10px 0;
+            width: 100%;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+
+            &:last-of-type {
+                margin: 10px 0 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+
+        &:hover {
+            background-color: $color-menu-bg;
+            border-color: $color-border;
+        }
+    }
+
+    &__dropdown-menu {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        background-color: $color-menu-bg;
+        border-top: none;
+        transform: translateX(-1px);
+        border-color: $color-border;
+    }
+
+    &__dropdown-item {
+        padding: 15px 15px;
+        border-bottom: 1px solid $color-border;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        &:hover {
+            color: $color-menu-hover;
+        }
+    }
+
+    &__link {
+        color: $color-menu;
+        font-size: 16px;
+        padding: 0 10px;
+
+        &.active
+        ,&:hover {
+            color: $color-menu-hover;
+        }
+
+        @media screen and (max-width: 1199px) {
+            font-size: 18px;
+        }
+    }
+}
+
+.dropdown-toggle--noicon::after {
+    display: none;
+}
+
+.slider {
+    @include slider-height(max-height, $slider-height-min-992);
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (max-width: 991px) {
+        @include slider-height(max-height, $slider-height-max-991);
+    }
+
+    @media screen and (max-width: 767px) {
+        @include slider-height(max-height, auto);
+    }
+
+    &__controller {
+        position: absolute;
+        top: calc( 50% - (120px / 2) );
+        right: 50px;
+        z-index: 99;
+
+        @media screen and (max-width: 599px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            top: auto;
+            bottom: 15px;
+            right: 20px;
+            max-height: 20px;
+        }
+    }
+
+    &__btn {
+        margin: 0;
+        padding: 7px 0;
+        background-color: unset;
+        border: none;
+        outline: none !important;
+        box-shadow: none;
+        width: auto;
+        height: auto;
+        cursor: pointer;
+    }
+
+    &__index-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__item {
+        @include slider-height(height, $slider-height-min-992);
+        outline: none !important;
+        background: {
+            size: cover;
+            position: center center;
+            repeat: no-repeat;
+        }
+
+        @media screen and (max-width: 1199px) {
+            background: {
+                position: 60% center;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            @include slider-height(height, $slider-height-max-991);
+        }
+
+        @media screen and (max-width: 767px) {
+            @include slider-height(height, auto);
+            background: #ffe26f !important;
+            padding: 40px 0;
+        }
+
+        @media screen and (max-width: 375px) {
+            padding: 20px 0 40px;
+
+        }
+    }
+
+    &__row {
+        padding-top: 110px;
+
+        @media screen and (max-width: 1199px) {
+            padding-top: 90px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            padding-top: 60px;
+        }
+
+        @media screen and (max-width: 991px) {
+            padding-top: 40px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 0;
+        }
+    }
+
+    &__title {
+        font-size: 48px;
+        color: $color-menu-hover;
+        margin-bottom: $margin-bottom;
+
+        @media screen and (max-width: 991px) {
+            font-size: 32px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 28px;
+        }
+    }
+}
+
+.splide__pagination {
+    padding: 0;
+    margin-left: -2px;
+    margin-bottom: 0;
+    list-style: none;
+
+    @media screen and (max-width: 599px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        min-width: 100px;
+        padding: 0 10px;
+    }
+}
+
+.splide__pagination__page {
+    all: unset;
+    background-image: url("../images/icon/icon-slider-shape.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 12px;
+    outline: none !important;
+
+    &.is-active {
+        background-image: url("../images/icon/icon-slider-active.png");
+    }
+}

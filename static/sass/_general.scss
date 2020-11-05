@@ -1,15 +1,5 @@
 @import "_var";
 
-html, body {
-    font-family: "corbel";
-}
-
-p {
-    font-size: 18px;
-    line-height: 22px;
-    color: $color-text;
-}
-
 .container {
     &--relative {
         position: relative;
@@ -34,29 +24,6 @@ p {
     }
 }
 
-.btn {
-    border: none;
-    outline: none;
-    background-image: linear-gradient(90deg, $color-light-orange, $color-dark-orange);
-    cursor: pointer;
-    color: $color-btn;
-    font-size: 21px;
-    padding: 8px 42px;
-    border-radius: 10px;
-
-    @media screen and (max-width: 767px) {
-        font-size: 18px;
-        padding: 9px 28px;
-    }
-
-    &--trans {
-        background: transparent;
-        color: #a0a0a0;
-        border: 1px solid #a0a0a0;
-        text-transform: uppercase;
-    }
-}
-
 .slider__text {
     margin-bottom: $margin-bottom;
 }
@@ -65,13 +32,23 @@ p {
     padding: 70px 0;
 }
 
-.headline__text {
-    line-height: 1;
-    margin-bottom: 0;
-    font-weight: bold;
-    font-size: 36px;
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+        
+    &__item {
+        display: flex;
+        padding: 10px;
+        background-color: #0a2034;
+        border-radius: 50%;
+    }
 
-    &--white {
-        color: $color-btn;
+    svg {
+        fill: #ffffff;
+        width: 12px;
+        height: 12px;
+        display: flex;
     }
 }

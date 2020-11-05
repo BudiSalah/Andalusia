@@ -1,0 +1,74 @@
+@import "./../_var";
+
+.officers {
+    &__container {
+        @media screen and (min-width: 992px) {
+            max-width: 1010px;
+        }
+    }
+
+    &__item {
+        @media screen and (max-width: 991px) {
+            margin-bottom: 40px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 50px;
+    }
+
+    &__pic {
+        width: 100%;
+
+        &--auto {
+            @media screen and (max-width: 767px) {
+                width: auto;
+            }
+        }
+    }
+
+    &__card {
+        padding: 25px 30px;
+        border: 1px solid $color-border;
+        box-shadow: 2px 2px 4px $color-border;
+    }
+
+    &__name {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 0;
+        color: $color-officer;
+        
+        &--small {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+    }
+
+    &__role {
+        font-size: 17px;
+        font-weight: bold;
+        color: $color-dark-orange;
+        margin-bottom: 0;
+        
+        &--small {
+            font-size: 14px;
+            font-weight: normal;
+        }
+    }
+
+    &__quote {
+        margin: 20px 0;
+        font-size: 16px;
+        color: $color-officer;
+    }
+
+    &__single {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,53 @@
+@import "_var";
+
+html, body {
+    font-family: "corbel";
+}
+
+p {
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-text;
+}
+
+.headline__text {
+    line-height: 1;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 36px;
+
+    &--white {
+        color: $color-btn;
+    }
+
+    @media screen and (max-width: 575px) {
+        font-size: 28px;
+    }
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-image: linear-gradient(90deg, $color-light-orange, $color-dark-orange);
+    cursor: pointer;
+    color: $color-btn;
+    font-size: 21px;
+    padding: 8px 42px;
+    border-radius: 10px;
+
+    @media screen and (max-width: 767px) {
+        font-size: 18px;
+        padding: 9px 28px;
+    }
+
+    &--trans {
+        background: transparent;
+        color: #a0a0a0;
+        border: 1px solid #a0a0a0;
+        text-transform: uppercase;
+    }
+}
+
+.hr {
+    margin: 20px 0;
+}

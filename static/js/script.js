@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", main)
 function main() {
     showDropDown();
     splideSlider();
+    parallax();
 }
 
 function showDropDown() {
@@ -45,7 +46,7 @@ function splideSlider() {
         type: "loop",
         direction: 'ttb',
         height: `${sliderItem.clientHeight}px`,
-        // autoplay: true,
+        autoplay: true,
         pauseOnHover: false,
         pauseOnFocus: false
     } ).mount();
@@ -53,4 +54,29 @@ function splideSlider() {
     let pagiWrapper = document.querySelector(".slider__index-list");
     let splidePagi = document.querySelector(".splide__pagination");
     pagiWrapper.insertAdjacentElement("afterbegin", splidePagi);
+}
+
+function parallax() {
+    let parallaxs = Array.from(document.querySelectorAll(".parallax"));
+    const offsetMargin = 300;
+
+    window.addEventListener("scroll", () => {
+        let windowOffset = window.pageYOffset;
+
+        for (item of parallaxs) {
+            if ((item.offsetTop - offsetMargin) <= windowOffset) {
+                parallaxs = parallaxs.filter(target => {
+                    return item.classList.value !== target.classList.value;
+                });
+
+                let childs = Array.from(item.children);
+
+                for (child of childs) {
+                    let delay = childs.indexOf(child);
+                    child.style.transitionDuration = `${(delay + 1) * offsetMargin}ms`;
+                    child.classList.add("active");
+                }
+            };
+        };
+    });
 }

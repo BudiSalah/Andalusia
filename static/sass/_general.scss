@@ -95,3 +95,14 @@
         }
     }
 }
+
+.parallax {
+    > * {
+        transition: $transition-default;
+    }
+
+    > *:not(.active) {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}

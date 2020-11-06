@@ -1,14 +1,7 @@
 <template>
   <section class="overview section section--overview-pb section--overview-bg">
     <div class="container">
-      <div class="headline text-center text-uppercase">
-        <h1 class="headline__text headline__text--white">overview</h1>
-        <img
-          class="headline__icon"
-          src="@/assets/icon/icon-headling.png"
-          alt="Headline Icon"
-        />
-      </div>
+      <Headline title="overview" class="headline__text--white" />
 
       <p class="overview__text text-center">
         Andalusia is one of the leading regional players in the healthcare
@@ -30,7 +23,12 @@
 </template>
 
 <script>
+import Headline from "./unites/Headline";
+
 export default {
   name: "Overview",
+  components: {
+    Headline,
+  },
 };
 </script>

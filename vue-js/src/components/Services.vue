@@ -3,14 +3,7 @@
     class="ourservices section section--services-pb section--services-bg parallax"
   >
     <div class="container">
-      <div class="headline text-center text-uppercase">
-        <h1 class="headline__text">Our services</h1>
-        <img
-          class="headline__icon"
-          src="@/assets/icon/icon-headling.png"
-          alt="Headline Icon"
-        />
-      </div>
+      <Headline title="Our services" />
 
       <div class="services row parallax__list">
         <!-- service item goes here! -->
@@ -25,12 +18,14 @@
 </template>
 
 <script>
+import Headline from "./unites/Headline";
 import Service from "./unites/Service";
 
 export default {
   name: "Services",
   components: {
     Service,
+    Headline
   },
   data: () => {
     return {

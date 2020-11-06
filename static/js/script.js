@@ -58,7 +58,7 @@ function splideSlider() {
         type: "loop",
         direction: 'ttb',
         height: `${sliderItem.clientHeight}px`,
-        autoplay: true,
+        // autoplay: true,
         pauseOnHover: false,
         pauseOnFocus: false
     } ).mount();

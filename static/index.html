@@ -7,7 +7,7 @@
     <!-- <link rel="stylesheet" href="./css/style-rtl.css"> -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="rtl">
     <header>
         <nav class="navbar navbar-light navbar-expand-xl">
           <div class="container container--relative container--navbar-px">
@@ -15,7 +15,7 @@
                 <img src="./images/logo.png" class="d-inline-block align-top" alt="" loading="lazy">
               </a>
               
-              <ul id="navbarTogglerDemo01" class="nav collapse navbar-collapse">
+              <ul id="navbarTogglerDemo01" class="nav collapse navbar-collapse text-rtl">
                   <li class="nav-item nav__item">
                     <a class="nav-link nav__link" href="#">Home</a>
                   </li>
@@ -56,7 +56,7 @@
                   </li>
               </ul>
 
-              <button class="navbar-toggler navbar__mobile-btn" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler navbar__mobile-btn navbar__mobile-btn--rtl" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </div>
@@ -64,7 +64,7 @@
 
         <section class="slider">
           <div id="splide">
-            <div class="slider__controller splide__arrows">
+            <div class="slider__controller slider__controller--rtl splide__arrows">
               <img src="images/icon/icon-up-arrow.png" alt="Slider Icon" class="slider__btn slider__prev-btn splide__arrow splide__arrow--prev">
               <div class="slider__index-list"></div>
               <img src="images/icon/icon-down-arrow.png" alt="Slider Icon" class="slider__btn slider__next-btn splide__arrow splide__arrow--next">
@@ -72,13 +72,16 @@
 
             <div class="splide__track">
               <div class="slider__list splide__list">
-                <div class="slider__item splide__slide" style="background-image: url('./images/bg/bg-slide1.png');">
+                <div class="slider__item splide__slide" style="background-image: url('./images/bg/bg-slide1-rtl.png');">
                   <div class="container">
                     <div class="row slider__row">
                       <div class="col-12 col-md-6">
-                        <h1 class="slider__title">We are growing fast <br>do you see.</h1>
-                        <p class="slider__text">Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length.</p>
-                        <a href="http://" class="btn">Learn more</a>
+                        <h1 class="slider__title text-rtl">We are growing fast <br>do you see.</h1>
+                        <p class="slider__text text-rtl">Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length.</p>
+                        
+                        <div class="btn-wrapper text-rtl">
+                          <a href="http://" class="btn">Learn more</a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -170,9 +173,9 @@
                 <img class="officers__pic" src="./images/pic/pic-hazem.png" alt="Hazem Pic">
 
                 <div class="officers__card">
-                  <h2 class="officers__name">Hazem Darwiesh</h2>
-                  <h6 class="officers__role">Chief Executive Officer</h6>
-                  <p class="officers__quote">
+                  <h2 class="officers__name text-rtl">Hazem Darwiesh</h2>
+                  <h6 class="officers__role text-rtl">Chief Executive Officer</h6>
+                  <p class="officers__quote text-rtl">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt accusantium, veniam reprehenderit aspernatur, unde culpa atque laborum minima recusandae dolor a ducimus commodi non? Ut corporis exercitationem.
                   </p>
                   
@@ -294,39 +297,45 @@
                 <img class="officers__pic" src="./images/bg/bg-news-1.png" alt="News 1 Pic">
                 
                 <div class="officers__card">
-                  <h2 class="officers__name officers__name--news">How to Improve Your Sales Volume</h2>
-                  <h6 class="officers__date officers__date--news">23 AUG, 2018</h6>
-                  <p class="officers__quote officers__quote--news">
+                  <h2 class="officers__name officers__name--news text-rtl">How to Improve Your Sales Volume</h2>
+                  <h6 class="officers__date officers__date--news text-rtl">23 AUG, 2018</h6>
+                  <p class="officers__quote officers__quote--news text-rtl">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod teminc ididunt ut labore et dolore.
                   </p>
 
-                  <a href="#" class="btn btn--read-more">Read more</a>
+                  <div class="btn-wrapper text-rtl">
+                    <a href="#" class="btn btn--read-more">Read more</a>
+                  </div>
                 </div>
               </div>
               <div class="news__list col-12 col-lg-4 mb-5 mb-lg-0">
                 <img class="officers__pic" src="./images/bg/bg-news-2.png" alt="News 1 Pic">
                 
                 <div class="officers__card">
-                  <h2 class="officers__name officers__name--news">How to Improve Your Sales Volume</h2>
-                  <h6 class="officers__date officers__date--news">23 AUG, 2018</h6>
-                  <p class="officers__quote officers__quote--news">
+                  <h2 class="officers__name officers__name--news text-rtl">How to Improve Your Sales Volume</h2>
+                  <h6 class="officers__date officers__date--news text-rtl">23 AUG, 2018</h6>
+                  <p class="officers__quote officers__quote--news text-rtl">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod teminc ididunt ut labore et dolore.
                   </p>
 
-                  <a href="#" class="btn btn--read-more">Read more</a>
+                  <div class="btn-wrapper text-rtl">
+                    <a href="#" class="btn btn--read-more">Read more</a>
+                  </div>
                 </div>
               </div>
               <div class="news__list col-12 col-lg-4 mb-0">
                 <img class="officers__pic" src="./images/bg/bg-news-3.png" alt="News 1 Pic">
                 
                 <div class="officers__card">
-                  <h2 class="officers__name officers__name--news">How to Improve Your Sales Volume</h2>
-                  <h6 class="officers__date officers__date--news">23 AUG, 2018</h6>
-                  <p class="officers__quote officers__quote--news">
+                  <h2 class="officers__name officers__name--news text-rtl">How to Improve Your Sales Volume</h2>
+                  <h6 class="officers__date officers__date--news text-rtl">23 AUG, 2018</h6>
+                  <p class="officers__quote officers__quote--news text-rtl">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod teminc ididunt ut labore et dolore.
                   </p>
 
-                  <a href="#" class="btn btn--read-more">Read more</a>
+                  <div class="btn-wrapper text-rtl">
+                    <a href="#" class="btn btn--read-more">Read more</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -363,12 +372,12 @@
 
     <footer class="footer section">
       <div class="container">
-        <h2 class="footer__headline">Explore More</h2>
+        <h2 class="footer__headline text-rtl">Explore More</h2>
 
         <hr class="hr hr--gray">
 
         <div class="footer__row row">
-          <div class="footer__col col-6 col-lg-3">
+          <div class="footer__col col-6 col-lg-3 text-rtl">
             <div class="footer__title">Quick Links</div>
             <ul class="footer__list">
               <li class="footer__item"><a class="footer__link" href="#">Home</a></li>
@@ -380,7 +389,7 @@
             </ul>
           </div>
 
-          <div class="footer__col col-6 col-lg-3">
+          <div class="footer__col col-6 col-lg-3 text-rtl">
             <div class="footer__title">Our Hospitals</div>
             <ul class="footer__list">
               <li class="footer__item"><a class="footer__link" href="#">Al Shalalatat</a></li>
@@ -391,10 +400,10 @@
             </ul>
           </div>
 
-          <div class="footer__item footer__newsletter col-12 col-lg-6">
+          <div class="footer__item footer__newsletter col-12 col-lg-6 text-rtl">
             <div class="footer__title">New Letter</div>
             <form class="form">
-              <div class="form-group form__group">
+              <div class="form-group form__group direction-rtl">
                 <input type="email" class="form-control form__input" aria-describedby="emailHelp">
                 <button type="submit" class="btn btn--form">Subscribe Now</button>
               </div>

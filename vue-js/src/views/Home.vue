@@ -4,15 +4,16 @@
     <Services />
     <Overview />
     <Officers />
+    <Statistics />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import Sliders from "@/components/Sliders";
 import Services from "@/components/Services";
 import Overview from "@/components/Overview";
 import Officers from "@/components/Officers";
+import Statistics from "@/components/Statistics";
 
 export default {
   name: "Home",
@@ -20,7 +21,8 @@ export default {
     Sliders,
     Services,
     Overview,
-    Officers
+    Officers,
+    Statistics
   },
 };
 </script>

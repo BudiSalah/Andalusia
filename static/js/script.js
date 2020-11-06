@@ -4,6 +4,7 @@ function main() {
     showDropDown();
     splideSlider();
     parallax();
+    stopAnimation()
 }
 
 function notExists(target, byLength = false) {
@@ -99,4 +100,12 @@ function parallax() {
             };
         }
     });
+}
+
+function stopAnimation() {
+    let statIcons = document.querySelectorAll(".statistics__icon");
+    if (notExists(statIcons, true)) return;
+    for (icon of statIcons) {
+        icon.addEventListener("click", (e) => e.target.closest(".statistics__icon").classList.add("stop"));
+    }
 }

@@ -1,5 +1,33 @@
 @import "./../_var";
 
+@mixin animation($duration) {
+    animation-name: animateSvg;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animateSvg {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-4px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .statistics {
     background: {
         image: url("../images/bg/bg-statistics.png");
@@ -38,6 +66,12 @@
         svg {
             fill: white;
             height: 55px;
+        }
+
+        &:not(.stop) {
+            svg {
+                @include animation(3s);
+            }
         }
 
         &:hover {

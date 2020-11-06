@@ -69,7 +69,7 @@ function splideSlider() {
 
 function parallax() {
     let ourServices = document.querySelector(".ourservices");
-    let parallaxs = Array.from(document.querySelectorAll(".parsallax"));
+    let parallaxs = Array.from(document.querySelectorAll(".parallax"));
     let windowOffset = window.pageYOffset;
     const offsetMargin = 300;
     const backgroundSpeed = 10;

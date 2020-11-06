@@ -149,12 +149,14 @@ function siteLang() {
         localStorage.setItem("lang", "en");
         document.body.classList.remove("rtl");
         langIcon.src = langIcon.src.replace(/eng/, "ar");
+        fixSliderImgs("en");
     }
 
     function setAr() {
         localStorage.setItem("lang", "ar");
         document.body.classList.add("rtl");
         langIcon.src = langIcon.src.replace(/ar/, "eng");
+        fixSliderImgs("ar");
     }
 
     (currentLang == null || currentLang == "en") ? setEn() : setAr();
@@ -168,4 +170,19 @@ function siteLang() {
         e.preventDefault();
         switchLang();
     });
+}
+
+// unnecessary function to temporary fix sliders img
+function fixSliderImgs(lang) {
+    let sliderImgs = document.querySelectorAll(".slider__item");
+
+    if (notExists(sliderImgs, true)) return;
+
+    for (img of sliderImgs) {
+        if (lang == "en") {
+            img.style.backgroundImage = img.style.backgroundImage.replace(/-rtl.png/i, ".png");
+        } else {
+            img.style.backgroundImage = img.style.backgroundImage.replace(/.png/i, "-rtl.png");
+        }
+    }
 }

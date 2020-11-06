@@ -6,10 +6,21 @@ function main() {
     parallax();
 }
 
+function notExists(target, byLength = false) {
+    if (target !== null) {
+        if (byLength) {
+            return target.length > 0 ? false : true;
+        } else {
+            return false
+        }
+    }
+    return true;
+}
+
 function showDropDown() {
     let dropdowns = document.querySelectorAll(".dropdown");
 
-    if (dropdowns.length < 1) return;
+    if (notExists(dropdowns, true)) return;
 
     for (dropdown of dropdowns) {
         dropdown.addEventListener("mouseenter", toggleMenu)
@@ -40,7 +51,7 @@ function showDropDown() {
 function splideSlider() {
     let sliderItem = document.querySelector(".slider__item");
     
-    if (sliderItem == null) return;
+    if (notExists(sliderItem)) return;
 
     new Splide( '#splide', {
         type: "loop",
@@ -58,32 +69,34 @@ function splideSlider() {
 
 function parallax() {
     let ourServices = document.querySelector(".ourservices");
-    let parallaxs = Array.from(document.querySelectorAll(".parallax"));
+    let parallaxs = Array.from(document.querySelectorAll(".parsallax"));
     let windowOffset = window.pageYOffset;
     const offsetMargin = 300;
     const backgroundSpeed = 10;
-    
-    ourServices.style.backgroundPositionY = `-${windowOffset / backgroundSpeed}px`;
+
+    !notExists(ourServices) ? ourServices.style.backgroundPositionY = `-${windowOffset / backgroundSpeed}px` : "";
 
     window.addEventListener("scroll", () => {
         windowOffset = window.pageYOffset;
 
-        ourServices.style.backgroundPositionY = `-${windowOffset / backgroundSpeed}px`
+        !notExists(ourServices) ? ourServices.style.backgroundPositionY = `-${windowOffset / backgroundSpeed}px` : "";
 
-        for (item of parallaxs) {
-            if ((item.offsetTop - offsetMargin) <= windowOffset) {
-                parallaxs = parallaxs.filter(target => {
-                    return item.classList.value !== target.classList.value;
-                });
-
-                let childs = Array.from(item.children);
-
-                for (child of childs) {
-                    let delay = childs.indexOf(child);
-                    child.style.transitionDuration = `${(delay + 1) * offsetMargin}ms`;
-                    child.classList.add("active");
-                }
+        if (!notExists(parallaxs, true)) {
+            for (item of parallaxs) {
+                if ((item.offsetTop - offsetMargin) <= windowOffset) {
+                    parallaxs = parallaxs.filter(target => {
+                        return item.classList.value !== target.classList.value;
+                    });
+    
+                    let childs = Array.from(item.children);
+    
+                    for (child of childs) {
+                        let delay = childs.indexOf(child);
+                        child.style.transitionDuration = `${(delay + 1) * offsetMargin}ms`;
+                        child.classList.add("active");
+                    }
+                };
             };
-        };
+        }
     });
 }

@@ -1,0 +1,103 @@
+@import "./../_var";
+
+@mixin animation($duration) {
+    animation-name: animateSvg;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animateSvg {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-4px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.statistics {
+    background: {
+        image: url("../assets/bg/bg-statistics.png");
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+
+    &__item {
+        text-align: center;
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__list {
+        margin-top: 65px;
+
+        &--news {
+            margin-top: 35px;
+        }
+    }
+
+    &__icon {
+        width: 90px;
+        height: 90px;
+        margin: auto;
+        margin-bottom: 30px;
+        line-height: 80px;
+        border: 3px solid $color-border;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: $transition-default;
+
+        svg {
+            fill: white;
+            height: 55px;
+        }
+
+        &:not(.stop) {
+            svg {
+                @include animation(3s);
+            }
+        }
+
+        &:hover {
+            border-color: $color-btn;
+            background-color: $color-btn;
+
+            svg {
+                fill: $color-light-orange;
+            }
+        }
+    }
+
+    &__num,
+    &__name {
+        color: $color-btn;
+        line-height: 1;
+    }
+
+    &__num {
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: "calibri";
+    }
+
+    &__name {
+        font-size: 22px;
+        text-transform: capitalize;
+    }
+}

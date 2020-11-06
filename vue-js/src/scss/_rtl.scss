@@ -1,0 +1,31 @@
+body.rtl {
+    direction: rtl;
+
+    .text-rtl {
+        text-align: right;
+    }
+
+    .direction-rtl {
+        direction: rtl;
+    }
+
+    .navbar__mobile-btn--rtl {
+        right: unset;
+        left: 0;
+
+        @media screen and (max-width: 575px) {
+            right: unset;
+            left: 15px;
+        }
+    }
+
+    .slider__controller--rtl {
+        right: unset;
+        left: 50px;
+
+        @media screen and (max-width: 599px) {
+            right: unset;
+            left: 20px;
+        }
+    }
+}

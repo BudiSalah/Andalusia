@@ -4,7 +4,7 @@ function main() {
     showDropDown();
     splideSlider();
     parallax();
-    stopAnimation()
+    stopAnimation();
 }
 
 function notExists(target, byLength = false) {
@@ -85,17 +85,19 @@ function parallax() {
         if (!notExists(parallaxs, true)) {
             for (item of parallaxs) {
                 if ((item.offsetTop - offsetMargin) <= windowOffset) {
-                    parallaxs = parallaxs.filter(target => {
-                        return item.classList.value !== target.classList.value;
-                    });
+                    item.classList.contains("statistics") ? statisticsCounter() : "";
     
-                    let childs = Array.from(item.children);
+                    let childs = Array.from(item.querySelector(".parallax__list").children);
     
                     for (child of childs) {
                         let delay = childs.indexOf(child);
                         child.style.transitionDuration = `${(delay + 1) * offsetMargin}ms`;
                         child.classList.add("active");
                     }
+
+                    parallaxs = parallaxs.filter(target => {
+                        return item.classList.value !== target.classList.value;
+                    });
                 };
             };
         }
@@ -109,3 +111,30 @@ function stopAnimation() {
         icon.addEventListener("click", (e) => e.target.closest(".statistics__icon").classList.add("stop"));
     }
 }
+
+function statisticsCounter() {
+    let statisNums = document.querySelectorAll(".statistics__num");
+
+    if (notExists(statisNums, true)) return;
+
+    function animateValue(target, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            target.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        
+        window.requestAnimationFrame(step);
+    };
+
+    for (num of statisNums) {
+        const targetCount = num.getAttribute("count-to");
+        if (targetCount === null) continue;
+        animateValue(num, 0, targetCount, 2000);
+    }
+}
+

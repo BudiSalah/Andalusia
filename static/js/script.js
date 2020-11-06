@@ -1,3 +1,5 @@
+siteLang();
+
 window.addEventListener("DOMContentLoaded", main)
 
 function main() {
@@ -138,3 +140,32 @@ function statisticsCounter() {
     }
 }
 
+function siteLang() {
+    let langBtn = document.querySelector(".lang__btn");
+    let langIcon = langBtn.querySelector("img");
+    let currentLang = localStorage.getItem("lang");
+
+    function setEn() {
+        localStorage.setItem("lang", "en");
+        document.body.classList.remove("rtl");
+        langIcon.src = langIcon.src.replace(/eng/, "ar");
+    }
+
+    function setAr() {
+        localStorage.setItem("lang", "ar");
+        document.body.classList.add("rtl");
+        langIcon.src = langIcon.src.replace(/ar/, "eng");
+    }
+
+    (currentLang == null || currentLang == "en") ? setEn() : setAr();
+    
+    function switchLang() {
+        currentLang = localStorage.getItem("lang");
+        (currentLang == "en") ? setAr() : setEn();
+    };
+
+    langBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        switchLang();
+    });
+}

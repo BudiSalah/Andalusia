@@ -57,11 +57,18 @@ function splideSlider() {
 }
 
 function parallax() {
+    let ourServices = document.querySelector(".ourservices");
     let parallaxs = Array.from(document.querySelectorAll(".parallax"));
+    let windowOffset = window.pageYOffset;
     const offsetMargin = 300;
+    const backgroundSpeed = 10;
+    
+    ourServices.style.backgroundPositionY = `-${windowOffset / backgroundSpeed}px`;
 
     window.addEventListener("scroll", () => {
-        let windowOffset = window.pageYOffset;
+        windowOffset = window.pageYOffset;
+
+        ourServices.style.backgroundPositionY = `-${windowOffset / backgroundSpeed}px`
 
         for (item of parallaxs) {
             if ((item.offsetTop - offsetMargin) <= windowOffset) {

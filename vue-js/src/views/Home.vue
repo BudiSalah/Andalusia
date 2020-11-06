@@ -3,6 +3,7 @@
     <Sliders />
     <Services />
     <Overview />
+    <Officers />
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import Sliders from "@/components/Sliders";
 import Services from "@/components/Services";
 import Overview from "@/components/Overview";
+import Officers from "@/components/Officers";
 
 export default {
   name: "Home",
   components: {
     Sliders,
     Services,
-    Overview
+    Overview,
+    Officers
   },
 };
 </script>

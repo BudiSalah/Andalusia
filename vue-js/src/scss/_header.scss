@@ -229,6 +229,7 @@ $slider-height-max-991: 400px;
         font-size: 48px;
         color: $color-menu-hover;
         margin-bottom: $margin-bottom;
+        max-width: 400px;
 
         @media screen and (max-width: 991px) {
             font-size: 32px;

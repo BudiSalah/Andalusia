@@ -72,15 +72,9 @@
 </template>
 
 <script>
-import './scss/imports.scss';
+  import './scss/imports.scss';
 
-export default {
-  components: {
-    // Slider
+  export default {
+    
   }
-}
 </script>
-
-<style lang="scss">
-/* add general styling here */
-</style>

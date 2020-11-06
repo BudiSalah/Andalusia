@@ -58,7 +58,7 @@ function splideSlider() {
         type: "loop",
         direction: 'ttb',
         height: `${sliderItem.clientHeight}px`,
-        // autoplay: true,
+        autoplay: true,
         pauseOnHover: false,
         pauseOnFocus: false
     } ).mount();
@@ -122,7 +122,7 @@ function statisticsCounter() {
         const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            target.innerHTML = Math.floor(progress * (end - start) + start);
+            target.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
             if (progress < 1) {
                 window.requestAnimationFrame(step);
             }

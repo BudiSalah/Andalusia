@@ -16,7 +16,7 @@ export default {
   name: "VerticalMenu",
   props: {
     menuTitle: String,
-    menuItems: Object,
+    menuItems: Array,
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="slider__item splide__slide" :style="{backgroundImage: 'url(' + sliderImgUrl + ') !important'}">
+  <div class="slider__item splide__slide" :style="{backgroundImage: 'url(' + sliderImgUrl + ')'}">
     <div class="container">
       <div class="row slider__row">
         <div class="col-12 col-md-6">

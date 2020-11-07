@@ -11,18 +11,17 @@
         <div class="slider__list splide__list">
           <!-- slider item goes here -->
           <Slider
-            :sliderImgUrl="sliderImg"
+            :sliderImgUrl="getSliderImg"
             sliderTitle="We are growing fast do you see."
             sliderText="Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length."
             sliderMoreUrl="#"
           />
           <Slider
-            :sliderImgUrl="sliderImg"
+            :sliderImgUrl="getSliderImg"
             sliderTitle="We are growing fast do you see."
             sliderText="Preserved defective offending he daughters on or. Rejoiced prospect yet material servants out answered men admitted. Sportsmen certainty prevailed suspected am as. Add stairs admire all answer the nearer yet length."
             sliderMoreUrl="#"
           />
-
         </div>
       </div>
     </div>
@@ -31,21 +30,18 @@
 
 <script>
 import Slider from "./unites/Slider";
+import {mapGetters} from "vuex";
 
 export default {
   name: 'Sliders',
   components: {
     Slider
   },
-  data: () => {
+  computed: mapGetters(["getSliderImg"]),
+  data: function() {
     return {
-      sliderImg: require("@/assets/bg/bg-slide1.png")
+      // sliderImg: require("@/assets/bg/bg-slide1.png")
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-
-</style>

@@ -79,10 +79,7 @@
             </li>
             <li class="nav-item nav__item">
               <router-link class="nav-link nav__link lang__btn" to="/">
-                <img
-                  :src="langIcon"
-                  alt="Language Icon"
-                />
+                <img :src="langIcon" alt="Language Icon" />
               </router-link>
             </li>
           </ul>
@@ -113,22 +110,24 @@
 <script>
 import "./scss/imports.scss";
 import Footer from "./components/Footer";
+import { mapActions } from "vuex";
 
 export default {
   name: "App",
-  data: function() {
+  data: function () {
     return {
-      langIcon: require("@/assets/icon/icon-lang-ar.png")
-    }
+      langIcon: require("@/assets/icon/icon-lang-ar.png"),
+    };
   },
   components: {
     Footer,
   },
   mounted() {
-      this.siteLang();
+    this.siteLang();
   },
   methods: {
-    siteLang: function() {
+    ...mapActions(["changeSliderImg"]),
+    siteLang: function () {
       let langBtn = document.querySelector(".lang__btn");
       let currentLang = localStorage.getItem("lang");
 
@@ -154,8 +153,12 @@ export default {
       langBtn.addEventListener("click", (e) => {
         e.preventDefault();
         switchLang(this);
+        this.changeSliderImg();
       });
     },
+  },
+  created() {
+    this.changeSliderImg();
   },
 };
 </script>

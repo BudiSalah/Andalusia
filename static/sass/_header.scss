@@ -62,10 +62,9 @@ $slider-height-max-991: 400px;
 
         @media screen and (max-width: 1199px) {
             line-height: 1.4;
-            margin: 10px 0;
             width: 100%;
             border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+            line-height: 3;
 
             &:last-of-type {
                 margin: 10px 0 0;

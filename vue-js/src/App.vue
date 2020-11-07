@@ -12,10 +12,7 @@
             />
           </router-link>
 
-          <ul
-            id="navbarTogglerDemo01"
-            class="nav collapse navbar-collapse text-rtl"
-          >
+          <ul id="toggleMenu" class="nav collapse navbar-collapse text-rtl">
             <li class="nav-item nav__item">
               <router-link class="nav-link nav__link" to="/">Home</router-link>
             </li>
@@ -88,8 +85,8 @@
             class="navbar-toggler navbar__mobile-btn navbar__mobile-btn--rtl"
             type="button"
             data-toggle="collapse"
-            data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
+            data-target="#toggleMenu"
+            aria-controls="toggleMenu"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
@@ -99,7 +96,7 @@
       </nav>
     </header>
 
-    <main style="min-height: 17.8vh;">
+    <main style="min-height: 17.8vh">
       <router-view />
     </main>
 
@@ -124,6 +121,9 @@ export default {
   },
   mounted() {
     this.siteLang();
+    this.showDropDown();
+    this.toggleMobileMenu();
+    this.closeMenu();
   },
   methods: {
     ...mapActions(["changeSliderImg"]),
@@ -154,6 +154,49 @@ export default {
         e.preventDefault();
         switchLang(this);
         this.changeSliderImg();
+      });
+    },
+    toggleMenu: function (e) {
+      let target = e.target;
+      let dropBtn = target.querySelector(".dropdown-toggle");
+      let dropMenu = target.querySelector(".dropdown-menu");
+
+      setTimeout(() => {
+        if (
+          !target.classList.contains("dropdown-menu") ||
+          !target.classList.contains("dropdown")
+        ) {
+          if (e.type == "mouseenter") {
+            target.classList.add("show");
+            dropMenu.classList.add("show");
+            dropBtn.setAttribute("aria-expanded", "true");
+          } else {
+            target.classList.remove("show");
+            dropMenu.classList.remove("show");
+            dropBtn.setAttribute("aria-expanded", "false");
+          }
+        }
+      }, 200);
+    },
+    showDropDown: function () {
+      let dropdowns = document.querySelectorAll(".dropdown");
+
+      for (let dropdown of dropdowns) {
+        dropdown.addEventListener("mouseenter", this.toggleMenu);
+        dropdown.addEventListener("mouseleave", this.toggleMenu);
+      }
+    },
+    toggleMobileMenu: function () {
+      let menuBtn = document.querySelector('[data-target="#toggleMenu"]');
+      let menu = document.getElementById("toggleMenu");
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    },
+    closeMenu: function () {
+      let mobileMenu = document.getElementById("toggleMenu");
+      mobileMenu.addEventListener("click", (e) => {
+        e.target.closest(".dropdown") == null || e.target.closest(".nav__dropdown-menu") != null ? e.target.closest("#toggleMenu").classList.remove("show") : "";
       });
     },
   },

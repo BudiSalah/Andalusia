@@ -6,6 +6,7 @@
     <Officers />
     <Statistics />
     <NewsList />
+    <Partners />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Overview from "@/components/Overview";
 import Officers from "@/components/Officers";
 import Statistics from "@/components/Statistics";
 import NewsList from "@/components/NewsList";
+import Partners from "@/components/Partners";
 
 export default {
   name: "Home",
@@ -25,7 +27,8 @@ export default {
     Overview,
     Officers,
     Statistics,
-    NewsList
+    NewsList,
+    Partners
   },
 };
 </script>

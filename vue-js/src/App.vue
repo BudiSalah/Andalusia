@@ -68,13 +68,19 @@
     <main>
       <router-view />
     </main>
+
+    <Footer />
   </div>
 </template>
 
 <script>
   import './scss/imports.scss';
+  import Footer from "./components/Footer";
 
   export default {
-    
+    name: "App",
+    components: {
+      Footer
+    }
   }
 </script>

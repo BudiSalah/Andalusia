@@ -57,5 +57,29 @@ export default {
       ],
     };
   },
+  methods: {
+    notExists: function (target, byLength = false) {
+      if (target !== null) {
+        if (byLength) {
+          return target.length > 0 ? false : true;
+        } else {
+          return false;
+        }
+      }
+      return true;
+    },
+    stopAnimation: function () {
+      let statIcons = document.querySelectorAll(".statistics__icon");
+      if (this.notExists(statIcons, true)) return;
+      for (let icon of statIcons) {
+        icon.addEventListener("click", (e) =>
+          e.target.closest(".statistics__icon").classList.add("stop")
+        );
+      }
+    },
+  },
+  mounted() {
+    this.stopAnimation();
+  },
 };
 </script>

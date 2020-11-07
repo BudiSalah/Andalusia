@@ -99,7 +99,7 @@
       </nav>
     </header>
 
-    <main>
+    <main style="min-height: 17.8vh;">
       <router-view />
     </main>
 
